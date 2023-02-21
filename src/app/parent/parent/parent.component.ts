@@ -17,7 +17,7 @@ interface Lesson {
   styleUrls: ['./parent.component.css'],
 })
 export class ParentComponent {
-  // grades: string[] = ['math: 5', 'english: 3']
+  isLoading = true
   lessons: Lesson[] = [
     {
       id: 0,
@@ -56,7 +56,11 @@ export class ParentComponent {
       ],
     },
   ]
-
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false
+    }, 3000)
+  }
   getGrade(grade: string) {
     // this.grades.push(grade)
   }
